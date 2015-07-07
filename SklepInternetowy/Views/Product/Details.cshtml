@@ -1,0 +1,106 @@
+﻿@model DataAccess.Entities.Products
+
+@{
+    ViewBag.Title = @Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("SideBar")
+
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("index", "home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li><a href="@Url.Action("products", "product")">Produkty</a> <span class="divider">/</span></li>
+                    <li><a href="@Url.Action("Category", "product", new {id = @Model.Category.ID})">@Model.Category.Name</a> <span class="divider">/</span></li>
+                    <li><a href="@Url.Action("Manufacturer", "product", new {id = @Model.Manufacturer.ID})">@Model.Manufacturer.Name</a> <span class="divider">/</span></li>
+                    <li class="active">@Model.Name</li>
+                </ul>
+                <div class="row">
+                    <div class="span3">
+                        <a id="img" href="@Url.Action("ViewImage", "Product", new { @productId = Model.ID })" data-lightbox="@Model.ID" data-title="test">
+                            <img width="150" height="150" src="@Url.Action("ViewImage", "Product", new {@productId = Model.ID})" alt="">
+                        </a>
+                        <div>
+                            <br />
+                            <button class="btn btn-large btn-success" style="margin-bottom: 10px;">Cena @Model.Price.ToString("F") zł</button>
+                            @if (Request.IsAuthenticated && Model.Quantity > 0)
+                            {
+                                <a href="@Url.Action("AddToCart","ShoppingCart",new {id = Model.ID})" class="btn btn-large btn-success">Dodaj do koszyka <i class="fa fa-shopping-cart"></i></a>
+                            }
+                        </div>
+                    </div>
+                    
+
+                    <div class="span6">
+                        <h3>@Model.Name</h3>
+
+                        <hr/>
+
+                        <h4>
+                            @if (Model.Quantity > 0)
+                            {
+                                <font color="green">
+                                    @Model.Quantity dostępnych sztuk
+                                </font>
+                            }
+                            else
+                            {
+                                <font color="red">
+                                    Brak w magazynie
+                                </font>
+                            }
+                        </h4>
+
+                        <hr/>
+
+                        @if (Model.IsBestSeller)
+                        {
+                            <font color="green"><h2><b>BESTSELLER</b></h2></font>
+                        }
+                    </div>
+
+                    <div class="span9">
+                        <ul id="productDetail" class="nav nav-tabs">
+                            <li class="active"><a href="#home" data-toggle="tab">Szczegóły produktu</a></li>
+                            <li><a href="#profile" data-toggle="tab">W tej samej kategorii</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade active in" id="home">
+                                <br class="clr"/>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 200px;"><b>Krótki opis</b></td>
+                                            <td>@Model.ShortDescription</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Producent</b></td>
+                                            <td>@Model.Manufacturer.Name</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Kategoria</b></td>
+                                            <td>@Model.Category.Name</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br class="clr"/>
+
+                                <h4><b>Opis</b></h4>
+                                <br class="clr"/>
+                                <p>
+                                    @Model.Description
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="profile">
+                                @Html.Partial("_ProductListing", ViewData["similarProducts"])
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

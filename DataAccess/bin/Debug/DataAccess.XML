@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataAccess</name>
+    </assembly>
+    <members>
+        <member name="M:DataAccess.Repository.Interfaces.IRepository`1.Get(System.Int32)">
+            <summary>
+            Pobranie obiektu z bazy danych
+            </summary>
+            <param name="id">id obiektu, który pobieramy z bazy danych</param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Repository.Interfaces.IRepository`1.Get(System.Guid)">
+            <summary>
+            Pobranie obiektu z bazy danych
+            </summary>
+            <param name="id">Guid obiektu, który pobieramy z bazy danych</param>
+            <returns></returns>
+        </member>
+        <member name="M:DataAccess.Repository.Interfaces.IRepository`1.Save(`0)">
+            <summary>
+            Zapisanie obiektu do bazy danych
+            </summary>
+            <param name="value">Obiekt, który ma być zapisany w bazie danych</param>
+        </member>
+        <member name="M:DataAccess.Repository.Interfaces.IRepository`1.Update(`0)">
+            <summary>
+            Uaktualnienie wartości obiektu w bazie danych
+            </summary>
+            <param name="value">Obiekt, który ma być uaktualniony w bazie danych</param>
+        </member>
+        <member name="M:DataAccess.Repository.Interfaces.IRepository`1.Delete(`0)">
+            <summary>
+            Usunięcie obiektu z bazy danych
+            </summary>
+            <param name="value">Obiekt, który ma zostać usunięty z bazy danych</param>
+        </member>
+        <member name="M:DataAccess.Repository.Interfaces.IRepository`1.GetAll">
+            <summary>
+            Pobranie listy elementów określonego typu
+            </summary>
+            <returns>Lista obiektów określonego typu</returns>
+        </member>
+    </members>
+</doc>

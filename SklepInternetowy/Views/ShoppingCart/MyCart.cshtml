@@ -1,0 +1,121 @@
+﻿@model SklepInternetowy.Models.ShoppingCartViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("SideBar")
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li class="active">Mój koszyk</li>
+                </ul>
+                <h3>  Mój koszyk [ <small>@Model.ItemCount przedmioty/ów w koszyku </small>]
+                    <a href="@Url.Action("Products","Product")" class="btn btn-large pull-right"> Kontynuuj zakupy</a>
+                    <a href="javascript:history.back()" class="btn btn-large pull-right">Wróć</a>
+                </h3>	
+                @if (Model.CartItems.Count > 0)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Produkt</th>
+                                <th>Opis</th>
+                                <th>Ilość</th>
+                                <th>Cena jednostkowa</th>
+                                <th>Cena całkowita</th>
+                                <th>Opcje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in @Model.CartItems)
+                        {
+                            <tr>
+                                <td>
+                                    <img width="100px" height="100px" src="@Url.Action("ViewImage", "Product", new {@productId = item.ID})" alt="" />
+                                </td>
+                                <td>
+                                    @item.Product.Name
+                                    <br />@item.Product.ShortDescription
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("ChangeCount", "ShoppingCart", FormMethod.Post))
+                                    {
+                                        <input name="count" id="count" type="number" min="1" max="@item.Product.Quantity" value="@item.Quantity" style="width: 35px" />
+                                            <input type="submit" value="Zmień" class="btn-mini btn-info" style="margin-top: -10px;"/>
+                                            <input type="hidden" name="id" id="id" value="@item.ID" />
+                                    }
+                                </td>
+                                <td>
+                                    @item.Product.Price.ToString("F") zł
+                                </td>
+                                <td>@((item.Product.Price*item.Quantity).ToString("F")) zł</td>
+                                <td><a href="@Url.Action("RemoveFromCart", "ShoppingCart",new {id = @item.Product.ID})" class="btn btn-danger">Usuń</a></td>
+                            </tr>
+                        }
+                        @using (Html.BeginForm("CartSummary", "ShoppingCart", FormMethod.Post))
+                        {
+                            <tr>
+                                <td><h3>Sposób dostawy</h3></td>
+                                <td>
+                                    <select id="deliveryType" name="deliveryType" class="srchTxt" style="font-size: 15px; height: 40px; text-align: center; margin-top: 10px">
+                                        <option disabled selected>wybierz sposób dostawy</option>
+                                        @foreach (SelectListItem item in ViewBag.DeliverTypes)
+                                        {
+                                            <option value="@item.Value">@item.Text</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td colspan="4" style="text-align: right">
+                                    <h4>Łączna kwotwa do zapłaty:
+                                        <span class="large label label-important"><h4 id="totalCost">@Model.CartTotal.ToString("F") zł</h4></span>
+                                    </h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><a href="@Url.Action("CleanCart", "ShoppingCart")" class="btn btn-large btn-danger">Wyczyść koszyk</a></td>
+                                <td colspan="3">
+                                    <input id="btnCartSummary" class="btn btn-large pull-right btn-success" type="submit" value="Dalej" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="span12">
+                        <br /><br />
+                        <h2 style="vertical-align: middle;">Brak przedmiotów w koszyku</h2>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var total = Number(@Html.Raw(Json.Encode(Model.CartTotal)));
+        $("#btnCartSummary").attr("disabled", "disabled");
+        $("#deliveryType")
+            .change(function() {
+                $("select option:selected").each(function () {
+                    var deliveryCostText = $(this).text();
+                    var deliveryCost = deliveryCostText.replace(/[^\d,]/g, '').replace(",", ".");;
+                    var summaryPrice = addnumbers(deliveryCost, total);
+                    var totalCost = summaryPrice + " zł";
+                    $("#btnCartSummary").removeAttr("disabled");
+                    $("#totalCost").text('');
+                    $("#totalCost").text(totalCost);
+                }); // end each function
+            }); // end change function
+    }); // end ready
+    
+    function addnumbers(a, b) {
+        var c = Number(a) + Number(b);
+        return c.toFixed(2);
+    }
+</script>

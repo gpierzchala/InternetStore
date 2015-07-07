@@ -1,0 +1,117 @@
+﻿@model SklepInternetowy.Areas.Admin.Models.ProductDetailsViewModel
+
+@{
+    ViewBag.Title = "Szczegóły produktu " + Model.Name;
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-10">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                @ViewBag.Title
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter text-center">
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Nazwa
+                        </th>
+                        <td>@Model.Name</td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Opis
+                        </th>
+                        <td>@Model.Description</td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Krótki opis
+                        </th>
+                        <td>@Model.ShortDescription</td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Kategoria
+                        </th>
+                        <td>@Model.Category</td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Producent
+                        </th>
+                        <td>@Model.Manufacturer</td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Dostępna ilość
+                        </th>
+                        <td>@Model.AvailableItemCount</td>
+                    </tr>
+
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Bestseller
+                        </th>
+                        <td>
+                            @if (Model.IsBestseller)
+                            {
+                                <div class="btn btn-large btn-success">Tak</div>
+                            }
+                            else
+                            {
+                                <div class="btn btn-large btn-danger">Nie</div>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Nowy
+                        </th>
+                        <td>
+                            @if (Model.IsFeatured)
+                            {
+                                <div class="btn btn-large btn-success">Tak</div>
+                            }
+                            else
+                            {
+                                <div class="btn btn-large btn-danger">Nie</div>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Często kupowany
+                        </th>
+                        <td>
+                            @if (Model.IsRecent)
+                            {
+                                <div class="btn btn-large btn-success">Tak</div>
+                            }
+                            else
+                            {
+                                <div class="btn btn-large btn-danger">Nie</div>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="header" style="text-align: center">
+                            Zdjęcie
+                        </th>
+                        <td>
+                            <a id="img" href="@Url.Action("ViewImage", "ManageProducts", new { @productId = Model.ID })" data-lightbox="@Model.ID" data-title="test">
+                                <img width=" 150px" height="150px" src="@Url.Action("ViewImage", "ManageProducts", new {@productId = Model.ID})" alt="">
+                            </a>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿
+@{
+    if (Request.IsAuthenticated)
+    {
+        ViewBag.AdminName = User.Identity.Name;
+    }
+}
+
+
+    <div id="page-wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 80px;" role="navigation">
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand pull-left" href="@Url.Action("Index", "Home")"><img src="~/FrontEnd/images/logo2.png" style="height: 59px; width: 100px;" alt="Sklep internetowy" /></a>
+            <a class="navbar-brand" href="@Url.Action("Index","Home",new {area = ""})">Powrót do sklepu</a>
+        </div>
+        
+        <div class="collapse navbar-collapse">
+            <div id="topBar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                            @{
+                                if (@ViewBag.AdminName != null)
+                                {
+                                    @ViewBag.AdminName
+
+                                }
+                            }
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+                            <li><a href="#"><i class="fa fa-gear"></i> Ustawienia</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("LogOut","Home")"><i class="fa fa-power-off"></i>Wyloguj się</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<div id="leftBar">
+    <ul class="nav navbar-nav side-nav" style="margin-top: 30px;">
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Kategorie <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Create", "ManageCategories")"><i class="fa fa-dashboard"></i>Dodaj nową</a></li>
+                <li><a href="@Url.Action("List", "ManageCategories")"><i class="fa fa-dashboard"></i>Lista dostępnych</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Producenci <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index","Manufacturers")"><i class="fa fa-dashboard"></i>Dodaj nowego</a></li>
+                <li><a href="@Url.Action("Index","Categories")"><i class="fa fa-dashboard"></i>Lista dostępnych</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Rodzaje dostaw <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index","Manufacturers")"><i class="fa fa-dashboard"></i>Dodaj nowy</a></li>
+                <li><a href="@Url.Action("Index","Categories")"><i class="fa fa-dashboard"></i>Lista dostępnych</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Zamówienia <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index","Categories")"><i class="fa fa-dashboard"></i>Lista dostępnych</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Produkty <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index","Manufacturers")"><i class="fa fa-dashboard"></i>Dodaj nowy</a></li>
+                <li><a href="@Url.Action("Index","Categories")"><i class="fa fa-dashboard"></i>Lista dostępnych</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Użytkownicy <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index","Categories")"><i class="fa fa-dashboard"></i>Lista dostępnych</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+        </nav>
+</div>

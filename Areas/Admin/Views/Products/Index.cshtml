@@ -1,0 +1,62 @@
+﻿@using Microsoft.Ajax.Utilities
+@model IList<DataAccess.Entities.Products>
+
+@{
+    ViewBag.Title = "Zarządzanie produktami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if(TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bar-chart-o"></i>
+                    Lista dostępnych produków w sklepie
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="table-responsive" style="position: relative;">
+                    <p>
+                        <a class="btn btn-success pull-left" href="@Url.Action("create")">Dodaj</a>
+                        <br /><br />
+                    </p>
+
+                    <table class="table table-bordered table-hover tablesorter">
+                        <thead>
+                            <tr>
+                                <th class="header" width="50%">Nazwa<i class="fa fa-sort"></i></th>
+                                <th class="header" width="30%">Kategoria<i class="fa fa-sort"></i></th>
+                                <th class="header">Cena (w zł)<i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.ActionLink(item.Name, "Details", new { id = item.ID }, new { title = "Szczegóły", @class = "tip-e" })
+                                    </td>
+                                    <td>@Html.DisplayFor(x=> item.Category.Name)</td>
+                                    <td>@Html.DisplayFor(x => item.Price)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

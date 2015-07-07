@@ -1,0 +1,136 @@
+﻿@model SklepInternetowy.Areas.Admin.Models.ProductModel
+
+@{
+    ViewBag.Title = "Edycja " + @Model.Name;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["error"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["error"]
+            </div>
+        </div>
+    </div>
+}
+
+    
+<div class="row">
+    <div class="col-lg-12">
+        <div class="pull-right" style="margin-bottom: 10px;">
+            <a class="btn btn-default" href="@Url.Action("Details", new {@id = Model.Id})">Wróć do szczegółów</a>
+        </div>
+    </div> 
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bar-chart-o"></i>
+                    @ViewBag.Title
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="main" style="position: relative">
+
+                    @using (Html.BeginForm("UploadImage", "Products", FormMethod.Post, new {id = "registerForm"}))
+                    {
+                        @Html.ValidationSummary(true)
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group">
+                            <label>Nazwa</label>
+                            @Html.TextBoxFor(x => x.Name, new {@class = "form-control input"})
+                            <font color="Red">@Html.ValidationMessageFor(model => model.Name)</font>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Opis</label>
+                            @Html.TextAreaFor(x => x.Description, new {@class = "form-control input"})
+                            @Html.ValidationMessageFor(model => model.Description)
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cena (zł)</label>
+                            @Html.TextBoxFor(x => x.Price, new {@class = "form-control input"})
+                            <font color="Red">@Html.ValidationMessageFor(model => model.Price)</font>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ilość (szt.)</label>
+                            @Html.TextBoxFor(x => x.Quantity, new {@class = "form-control input"})
+                            <font color="Red">@Html.ValidationMessageFor(model => model.Quantity)</font>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Wybierz producenta</label>
+                            <select id="Manufacturer" name="Manufacturer" class="form-control">
+                                @foreach (SelectListItem item in ViewBag.Manufacturers)
+                                {
+                                    if (@Model.Manufacturer == item.Text)
+                                    {
+                                        <option value="@item.Value" selected="selected">@item.Text</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Value">@item.Text</option>
+                                    }
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.Manufacturer)
+                        </div>
+
+                        <div class="form-group">
+                            <label>Wybierz kategorię</label>
+                            <select id="Category" name="Category" class="form-control">
+                                @foreach (SelectListItem item in ViewBag.Categories)
+                                {
+                                    if (@Model.Category == item.Text)
+                                    {
+                                        <option value="@item.Value" selected="selected">@item.Text</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Value">@item.Text</option>
+                                    }
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.Category)
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bieżące zdjęcie</label>
+                            @{
+                                if (ViewBag.HasImage)
+                                {
+                                    <img width="250" height="250" src="@Url.Action("ViewImage", "Products", new {productID = @Model.Id})"/>
+                                }
+                                else
+                                {
+                                    <p>Brak zdjęcia</p>
+                                }
+                                <hr/>
+                            }
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" value="Edytuj" />
+                        </div>
+                    }
+                    @{ Html.EndForm(); }
+                    
+                    @using (Html.BeginForm("UploadImage", "Products", FormMethod.Post, new {id = "registerForm", enctype = "multipart/form-data"}))
+                    {
+                        @Html.ValidationSummary(true)
+                        @Html.AntiForgeryToken()
+                        <label for="file">Wgraj zdjęcie produktu:</label>
+                        <input class="btn-default" type="file" name="file" id="file" value="Wybierz plik graficzny" accept="image/*" />
+                        <input type="hidden" name="productID" id="productID" value="@Model.Id"/>
+                        <input class="btn-default" type="submit" value="Wgraj plik" onclick="@Url.Action("UploadImage")" />
+                    }
+                    @{ Html.EndForm(); }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

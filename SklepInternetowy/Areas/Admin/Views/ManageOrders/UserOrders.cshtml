@@ -1,0 +1,87 @@
+﻿@model List<SklepInternetowy.Areas.Admin.Models.OrderModel>
+
+@{
+    ViewBag.Title = "Szczegóły zamówienia";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Zamówienia użytkownika nr @Model[0].Email
+            </h3>
+        </div>
+        <div class="panel-body">
+
+            @foreach (var order in Model)
+            {
+                <div id="table-responsive" style="position: relative">
+                    <table class="table table-bordered table-striped table-responsive">
+                        <thead>
+                        <tr>
+                            <th colspan="3">Dane dotyczące zamówienia</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Data zamówienia
+                            </th>
+                            <th>
+                                Sposób dostawy
+                            </th>
+                            <th>Koszt całkowity zamówienia</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@order.OrderDate</td>
+                                <td>@order.DeliveryType</td>
+                                <td>@order.SummaryPrice.ToString("c")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                   
+                    @if (order.OrderDetails.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped table-responsive">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Szczegóły zamówienia</th>
+                                </tr>
+                            <tr>
+                                <th>Produkt</th>
+                                <th>Ilość</th>
+                                <th>Cena jednostkowa</th>
+                                <th>Cena za produkt</th>
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in order.OrderDetails)
+                                {
+                                    <tr>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.UnitPrice.ToString("c")</td>
+                                        <td>@((item.Quantity * item.UnitPrice).ToString("c"))</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        @:
+                        <p>Brak danych na temat szczegółów zamówienia</p>
+                    }
+
+                    <hr size="30"/>
+                </div>
+            }
+
+           
+        </div>
+    </div>
+</div>

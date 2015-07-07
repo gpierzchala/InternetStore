@@ -1,0 +1,61 @@
+﻿@model IList<DataAccess.Entities.Manufacturers>
+
+@{
+    ViewBag.Title = "Zarządzanie producentami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista producentów dostępnych w sklepie
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <p>
+                    <a class="btn btn-success pull-left" href="@Url.Action("create")">Dodaj</a>
+                    <br /><br />
+                </p>
+
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Nazwa
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.ActionLink(item.Name, "Update", new { id = item.ID }, new { title = "Edytuj", @class = "tip-e" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

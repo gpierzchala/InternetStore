@@ -1,0 +1,125 @@
+﻿@model IList<SklepInternetowy.Areas.Admin.Models.DeliveryTypeViewModel>
+
+@{
+    ViewBag.Title = "Zarządzanie dostawami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-10" style="width: 100%; margin: 0 auto">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Dostępne sposoby dostaw
+            </h3>
+            <div style="float: right; margin-top: -25px">
+                <a type="button"
+                   class="btn btn-mini btn-default"
+                   href="#createModal"
+                   data-toggle="modal"
+                   data-id="createModal">
+                    Dodaj
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Nazwa
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Cena
+                            </th>
+                            <th>
+                                Dostępne opcje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr style="text-align: center">
+                                <td>
+                                    @item.Name
+                                </td>
+                                <td>@item.Price</td>
+                                <td>
+                                    <a href="@Url.Action("Update", "ManageDeliveryTypes", new {id = item.Id})" class="btn btn-large btn-info">Edytuj</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="createModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Nowa dostawa</h3>
+            </div>
+            @using (Html.BeginForm("Create", "ManageDeliveryTypes", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <table class="table tabs-left" style="border: none;">
+                        <tr>
+                            <td><label style="margin-right: 20px">*Nazwa:</label></td>
+                            <td><input type="text" name="name" id="name"/></td>
+                        </tr>
+                        <tr>
+                            <td><label style="margin-right: 20px">Kosz dostawy:</label></td>
+                            <td><input type="text" name="price" id="price"/></td>
+                        </tr>
+                    </table>
+                    <hr/>
+                    <p>* - pole obowiązkowe</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-success">Dodaj</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $().ready(function () {
+        $("#createModal").on("submit", function () {
+            if ($("#name").val().length < 2) {
+                alert("Wprowadź nazwę dla dostawy");
+                return false;
+            }
+            else if (!$.isNumeric($("#price").val())) {
+                alert("Wprowadzona cena nie jest liczbą lub użyj . (kropki) zamiast , (przecinka) jeżeli wprowadziłeś wartość");
+                return false;
+            }
+            else if ($("#price").val().length == 0) {
+                alert("Wprowadź koszt dostawy (w zł)");
+                return false;
+            }
+
+            return true;
+        });
+    });
+</script>

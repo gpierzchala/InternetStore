@@ -1,0 +1,105 @@
+﻿@using DataAccess.Entities
+
+<div id="sidebar" class="span3" >
+    @if (Request.IsAuthenticated)
+    {
+        <div class="well well-small">
+            <a id="myCart" href="@Url.Action("MyCart", "ShoppingCart")">
+                <img alt=" cart" src="~/FrontEnd/images/ico-cart.png">
+                @{
+                    if (HttpContext.Current.Request.Cookies["count"] != null)
+                    {
+                        @: Produkty w koszyku: @Request.Cookies["count"].Value
+                    }
+                    else
+                    {
+                        @: Koszyk pusty
+                    }
+                }
+                <span class="badge badge-warning pull-right">
+                    @if (HttpContext.Current.Request.Cookies["summary"] != null)
+                    {
+                        <span> @Request.Cookies["summary"].Value zł</span>
+                    }
+                    else
+                    {
+                        <span> 0.00zł </span>
+                    }
+                </span>
+            </a>
+        </div>
+    }
+    <div class="tab-content" id="tabs">
+        <div id="myTab">
+            <a href="#categories" data-toggle="tab">
+                <span class="btn btn-large btn-primary" id="categoryBtn"> Kategorie</span>
+            </a>
+            <a href="#manufacturers" data-toggle="tab" class="pull-right">
+                <span class="btn btn-large" id="manufacturerBtn"> Producenci</span>
+            </a>
+        </div>
+
+        <div class="tab-pane active" id="categories">
+            <ul id="sideManu" class="nav nav-tabs nav-stacked">
+                <li class="subMenu open">
+                @if (ViewBag.Categories != null)
+                {
+                    foreach (Categories category in ViewBag.Categories)
+                    {
+                        <li><a class="active" href="@Url.Action("Category", "Product", new {@id = @category.ID})"><strong><font size="4"><i class="fa fa-angle-double-right"></i> @category.Name</font></strong></a></li>
+                    }
+                }
+                <li><a class="active" href="@Url.Action("BestSellers", "Offer")"><strong><font color="green" size="4"><i class="fa fa-star"></i> BESTSELLERY</font></strong></a></li>
+                <li><a class="active" href="@Url.Action("Recent", "Offer")"><strong><font size="4"><i class="fa fa-angle-double-right"></i> Najnowsze</font></strong></a></li>
+                <li><a class="active" href="@Url.Action("Special", "Offer")"><strong><font size="4"><i class="fa fa-angle-double-right"></i> Oferta specjalna</font></strong></a></li>
+                <li><a class="active" href="@Url.Action("Products", "Product")"><strong><font size="4"><i class="fa fa-angle-double-right"></i> Wszystkie</font></strong></a></li>
+            </ul>
+            <br />
+        </div>
+    
+        <div class="tab-pane" id="manufacturers">
+            <ul id="sideManu" class="nav nav-tabs nav-stacked">
+                @if (ViewBag.Manufacturers != null)
+                {
+                    foreach (Manufacturers manufacturers in ViewBag.Manufacturers)
+                    {
+                        <li><a class="" href="@Url.Action("Manufacturer", "Product", new {@id = manufacturers.ID})"><strong><font size="4"><i class="fa fa-angle-double-right"></i> @manufacturers.Name</font></strong></a></li>
+                    }
+                }
+            </ul>
+            <br />
+        </div>
+    </div>
+</div>
+
+<script>
+    $().ready(function () {
+        
+        // Fade in category menu and fade out manufacturers menu and vice-versa
+        $('#categoryBtn').click(function () {
+            $('#manufacturers').fadeOut('fast');
+            $("#categoryBtn").attr("class", "btn btn-large btn-primary");
+            $('#manufacturerBtn').attr("class", "btn btn-large");
+            $('#categories').delay('150').fadeIn('slow');
+        });
+
+        $('#manufacturerBtn').click(function () {
+            $('#categories').fadeOut('fast');
+            $("#manufacturerBtn").attr("class", "btn btn-large btn-primary");
+            $('#categoryBtn').attr("class", "btn btn-large");
+            $('#manufacturers').delay('150').fadeIn('slow');
+        });
+        
+        // Change tab-menu class for clicked appriopriate button
+
+        $('#categoryBtn').click(function() {
+            $('#category').attr("class", "tab-pane active");
+            $('#manufacturers').attr("class", "tab-pane");
+        });
+
+        $('#manufacturerBtn').click(function() {
+            $('#manufacturers').attr("class", "tab-pane active");
+            $('#category').attr("class", "tab-pane");
+        });
+    });
+</script>

@@ -1,0 +1,30 @@
+﻿@model SklepInternetowy.Areas.Admin.Models.AnalysisChartModel
+
+
+@foreach (var chart in Model.Charts)
+{
+    <div style="display: table; margin: 0 auto;">
+        @chart
+    </div>
+}
+
+
+@if (Model.CityIncome != null)
+{
+    <table align="center" class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <td colspan="2">Wygenerowany dochód(w zł)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CityIncome)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

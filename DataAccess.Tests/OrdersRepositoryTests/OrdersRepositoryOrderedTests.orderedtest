@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="OrdersRepositoryOrderedTests" storage="c:\projekty\sklepinternetowy\dataaccess.tests\ordersrepositorytests\ordersrepositoryorderedtests.orderedtest" id="7744d69a-1311-4e56-8e57-88451b9aecf1" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="b1f8fcc2-6f39-29e8-22fc-d374b1549407" name="SaveOrder" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c259da4f-dba1-8807-1b92-770863b80852" name="GetAllOrders" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="de43231f-b8b7-70d1-56c1-3e77fc62aa49" name="GetOrder" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="305e51e3-1274-b658-0ce2-24660d615ac6" name="UpdateOrder" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="436275e6-1928-1a5d-87b2-5f104f74ddf5" name="DeleteOrder" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

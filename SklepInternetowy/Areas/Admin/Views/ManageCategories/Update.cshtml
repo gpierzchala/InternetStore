@@ -1,0 +1,63 @@
+﻿@model SklepInternetowy.Areas.Admin.Models.CategoryModel
+
+@{
+    ViewBag.Title = "Edycja " + Model.Name;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["error"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["error"]
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="pull-right" style="margin-bottom: 10px;">
+            <a class="btn btn-default" href="@Url.Action("List")">Wróć do listy</a>
+        </div>
+    </div> 
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bar-chart-o"></i>
+                    @ViewBag.Title
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="main" style="position: relative">
+
+                    @{ Html.BeginForm(); }
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+
+
+                    <div class="form-group">
+                        <label>Nazwa kategorii</label>
+                        <input class="form-control" name="name" value="@Model.Name">
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+
+                    <div class="form-group">
+                        <label>Opis</label>
+                        <textarea rows="3" class="form-control" name="description">@Model.Description</textarea>
+                        @Html.ValidationMessageFor(model => model.Description)
+                        <p class="help-block">Własny opis dotyczący kategorii</p>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Edytuj" />
+                    </div>
+
+                    @{ Html.EndForm(); }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

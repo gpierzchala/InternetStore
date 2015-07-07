@@ -1,0 +1,30 @@
+﻿@using DataAccess.Entities
+@model IEnumerable<Products>
+
+@{
+    ViewBag.Title = "Strona główna";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            
+            @Html.Partial("SideBar", ViewData["categories"])
+
+            <div class="span9">
+                <div id="featuredProducts">
+                    @Html.Partial("_FeaturedProducts", ViewData["featured"])
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span9 pull-right">
+                <div id="recentProducts">
+                    @Html.Partial("_RecentProducts", ViewData["recent"])
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model SklepInternetowy.Areas.Admin.Models.ProductModel
+
+@{
+    ViewBag.Title = "Szczegóły produktu " + @Model.Name;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-9">
+        <div class="pull-right" style="margin-bottom: 10px;">
+            <a class="btn btn-default" href="@Url.Action("Index")">Wróć do listy</a>
+        </div>
+    </div>    
+    <div class="col-lg-9">
+        <div class="panel panel-primary">
+            <div class="pull-right">
+                <a class="btn btn-success" href="@Url.Action("Update", new {@id = Int32.Parse(Model.Id)})">Edytuj</a>
+            </div>
+            <div class="panel-heading">
+                <h2 class="panel-title">
+                    <i class="fa fa-bar-chart-o"></i>
+                    @ViewBag.Title
+                </h2>
+            </div>
+            
+            <div class="panel-body">
+                <div id="main" style="position: relative">
+                    <table class="table table-bordered table-hover tablesorter">
+                        <tbody>
+                            <tr>
+                                <td><strong>Nazwa</strong></td>
+                                <td>@Model.Name</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Opis</strong></td>
+                                @{
+                                    if (@Model.Description.Length == 0)
+                                    {
+                                        <td>Brak opisu</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Model.Description</td>
+                                    }
+                                }
+                            </tr>
+                            <tr>
+                                <td><strong>Cena (zł)</strong></td>
+                                <td>@Model.Price</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ilość (szt.)</strong></td>
+                                <td>@Model.Quantity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Producent</strong></td>
+                                <td>@Model.Manufacturer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kategoria</strong></td>
+                                <td>@Model.Category</td>
+                            </tr>
+                            @if (ViewBag.HasImage)
+                            {
+                                <td><strong>Zdjęcie</strong></td>
+                                <td><img width="250" height="250" src="@Url.Action("ViewImage","Products", new {productID = @Model.Id})"/></td>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

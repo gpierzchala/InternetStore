@@ -1,0 +1,58 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<DataAccess.Entities.Products>
+@{
+    ViewBag.Title = "Dostępne produkty";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("SideBar")
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li class="active">@ViewBag.Title</li>
+                </ul>
+                    <hr />
+
+                    @using (Ajax.BeginForm("Products", "Product",
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "productListing"
+                        }))
+                    {
+                        <form class="form-horizontal span9">
+                            <div class="control-group">
+                                <table>
+                                    <tr>
+                                        <td>Sortuj według</td>
+                                    <tr>
+                                        <td align="center">@Html.DropDownList("SortOption", (SelectList)ViewData["SearchOptions"])</td>
+                                    </tr>
+                                    <td><button type="submit" id="submitButton" class="btn btn-primary ">Sortuj</button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form>
+                    }
+
+                    <div id="productListing">
+                        @Html.Partial("_ProductListing", Model)
+                    </div>
+
+
+                    <div class="pagination pagination-centered">
+                        <ul>
+                            <li>
+                                @Html.PagedListPager(Model, page => Url.Action("Products", new { page }))
+                            </li>
+                        </ul>
+                    </div>
+                    <br class="clr" />
+            </div>
+        </div>
+    </div>
+</div>

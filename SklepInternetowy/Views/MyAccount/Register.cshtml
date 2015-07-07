@@ -1,0 +1,142 @@
+﻿@model SklepInternetowy.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Rejestracja";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li class="active">Rejestracja</li>
+                </ul>
+                <h3>Rejestracja nowego użytkownika</h3>
+                <div class="span4 well">
+                    @{
+                        Html.BeginForm();
+                        <font color="red"> @Html.ValidationSummary(true)</font>
+                        @Html.AntiForgeryToken()
+                    }
+                    
+                    <table>
+                        <h4>Dane podstawowe</h4>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Imię *</label>
+                                    @Html.EditorFor(model => model.Name)
+                                    <font color="red">@Html.ValidationMessageFor(model => model.Name)</font>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Nazwisko *</label>
+                                    @Html.EditorFor(model => model.Surname)
+                                    <font color="red">@Html.ValidationMessageFor(model => model.Surname)</font>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Adres email *</label>
+                                    @Html.EditorFor(model => model.Email)
+                                    <font color="red"> @Html.ValidationMessageFor(model => model.Email)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Hasło *</label>
+                                    @Html.EditorFor(model => model.Password)
+                                    <font color="red">@Html.ValidationMessageFor(model => model.Password)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Powtórz hasło *</label>
+                                    @Html.EditorFor(model => model.RepeatedPassword)
+                                    <font color="red"> @Html.ValidationMessageFor(model => model.RepeatedPassword)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="span4 well">
+                    <table>
+                        <h4>Dane adresowe</h4>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Miejscowość *</label>
+                                    @Html.EditorFor(model => model.City)
+                                    <font color="red">@Html.ValidationMessageFor(model => model.City)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Kod pocztowy *</label>
+                                    @Html.EditorFor(model => model.ZipCode)
+                                    <font color="red"> @Html.ValidationMessageFor(model => model.ZipCode)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Ulica *</label>
+                                    @Html.EditorFor(model => model.Street)
+                                    <font color="red"> @Html.ValidationMessageFor(model => model.Street)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Numer budynku *</label>
+                                    @Html.EditorFor(model => model.HouseNumber)
+                                    <font color="red"> @Html.ValidationMessageFor(model => model.HouseNumber)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="control-group">
+                                    <label class="control-label col-md-2">Numer mieszkania</label>
+                                    @Html.EditorFor(model => model.FlatNumber)
+                                    <font color="red">@Html.ValidationMessageFor(model => model.FlatNumber)</font>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <p class="pull-left">
+                        * - oznacza wymagane pole
+                    </p>
+                    <div class="form-group pull-right">
+                        <input type="submit" class="btn btn-success btn-large" value="Zarejestuj" />
+                    </div>
+                </div>
+                @{ Html.EndForm(); }
+            </div>
+              
+        </div>
+    </div>
+</div>

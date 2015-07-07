@@ -1,0 +1,58 @@
+﻿@using DataAccess.Entities
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Orders>
+
+@{
+    ViewBag.Title = "Zarządzanie zamówieniami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista zamówień
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th>
+                                Użytkownik
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th>
+                                Data zamówienia
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th>Kosz całkowity
+                                <i class="fa fa-sort"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Orders item in Model)
+                        {
+                            <tr>
+                                <td>@Html.ActionLink(@item.User.Email,"OrderDetails", new {orderId = @item.Id},new {title = "Szczegóły", @class = "tip-e" } )</td>
+                                <td>@item.OrderDate</td>
+                                <td>@item.SummaryPrice.ToString("C")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination pagination-centered pull-right">
+                @Html.PagedListPager((IPagedList)Model, page =>
+                        Url.Action("List", new { page }),
+                                          PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing((new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "table-responsive" })))
+            
+            </div>
+        </div>
+    </div>
+</div>

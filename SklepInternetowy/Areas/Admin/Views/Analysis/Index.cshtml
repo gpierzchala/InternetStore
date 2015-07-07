@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Dostępne funkcje</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#" id="productAnalysis" class="analysis">Analiza towarowa</a>
+                </li>
+                <li>
+                    <a href="#" id="geographicAnalysis" class="analysis">Analiza geograficzna</a>
+                </li>
+                <li>
+                    <a href="#" id="predictAnalysis" class="analysis">Analiza predykcyjna</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="chartContainer" style="width: 1300px; height: 500px; margin: 0 auto;"></div>
+
+<img/>
+<script src="~/Scripts/Highcharts-4.0.1/js/highcharts-all.js"></script>
+<script type="text/javascript">
+    $(".analysis").on("click", function() {
+        $(".analysis").parent().each(function() { $(this).removeClass('active'); });
+        $("#" + $(this).attr('id')).parent().addClass("active");
+
+        var url;
+
+        switch ($(this).attr('id')) {
+        case "geographicAnalysis":
+            url = "@Url.Action("OriginAnalysis", "Analysis")";
+            break;
+        case "productAnalysis":
+            url = "@Url.Action("ProductAnalysis", "Analysis")";
+            break;
+        case "predictAnalysis":
+            url = "@Url.Action("PredictAnalysis", "Analysis")";
+                break;
+        }
+
+        $.ajax(
+        {
+            url: url,
+            type: "Get",
+            beforeSend: function() {
+                var loaderUrl = '@Url.Content("~/FrontEnd/img/loading.gif")';
+                var loader = "<div id='ajaxLoader' style='margin-left:50%; margin-top: 25%;'><img src='" + loaderUrl + "'/></div>";
+                $("#chartContainer").empty().html(loader);
+            },
+            complete: function() {
+                $("#ajaxLoader").remove();
+            },
+            success: function(data) {
+                $("#chartContainer").empty().html(data);
+            },
+            error: function() {
+                alert("Wystąpił błąd podczas ładowania danych. Ponów próbę, a jeżeli problem będzie powatarzał się skontaktuj się z administratorem");
+            }
+        });
+    });
+
+    $().ready(function() {
+        $.ajax(
+        {
+            url: "@Url.Action("ProductAnalysis", "Analysis")",
+            type: "Get",
+            beforeSend: function () {
+                var loaderUrl = '@Url.Content("~/FrontEnd/img/loading.gif")';
+                var loader = "<div id='ajaxLoader' style='margin-left:50%; margin-top: 30%;'><img src='" + loaderUrl + "'/></div>";
+                $("#chartContainer").empty().html(loader);
+            },
+            complete: function () {
+                $("#ajaxLoader").remove();
+            },
+            success: function(data) {
+                $("#chartContainer").empty().html(data);
+            },
+            error: function() {
+                alert("Wystąpił błąd podczas ładowania danych. Ponów próbę, a jeżeli problem będzie powatarzał się skontaktuj się z administratorem");
+            }
+        });
+    });
+</script>

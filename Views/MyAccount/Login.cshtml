@@ -1,0 +1,70 @@
+﻿@model SklepInternetowy.Models.LoginModel
+
+@{
+    ViewBag.Title = "Logowanie do konta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Index","Home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li class="active">Logowanie</li>
+                </ul>
+                <h3>Strona logowania</h3>
+                <hr class="soft" />
+
+                <div class="row">
+                    <div class="span6">
+                        <div class="well">
+                            <h5>Utwórz nowe konto</h5><br />
+                            Nie posiadasz jeszcze konta? Nic prostszego! Kliknij przycisk poniżej, aby przejść do formularza rejestracyjnego<br /><br /><br />
+
+                            <div class="controls">
+                                <a href="@Url.Action("Register")" class="btn block">Rejestracja</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="span6">
+                        <div class="well">
+                            <h5>Posiadasz konto?</h5>
+                            @{ Html.BeginForm(); }
+                            @Html.ValidationSummary(true)
+                            @Html.AntiForgeryToken()
+                            <div class="control-group">
+                                <label class="control-label" for="email">Email</label>
+                                <div class="controls">
+                                    <input class="span3" type="text" id="email" name="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="password">Hasło</label>
+                                <div class="controls">
+                                    <input type="password" class="span3" id="password" name="password" placeholder="Hasło">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="checkbox">
+                                    @Html.EditorFor(x => x.RememberMe)
+                                    @*<input type="checkbox" name="RememberMe">*@ Zapamiętaj mnie
+                                </label>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input type="submit" class="btn" value="Zaloguj" />   <a href="@Url.Action("ResetPassword")">Zapomniałeś hasła?</a>
+                                </div>
+                            </div>
+                            @{ Html.EndForm(); }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,21 @@
+﻿<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("SideBar", ViewData["categories"])
+
+            <div class="span9" style="float: left; font-size: 22px; margin-top: 100px; text-indent: 2px">
+                <p>
+                    Niestety wystąpił błąd podczas tworzenia zamówienia. <br /><br /> 
+                    Prosimy o kontakt z naszym sklepem w celu weryfikacji zamówienia. <br /><br />
+                    Jednocześnie informujemy iż w przypadku winy spowodowanej z naszej strony przysługuje klientowi bon w wysokości 10 zł na zakupy w naszym sklepie.<br /><br />   
+                </p>
+                <p>
+                <p style="float: right">
+                    Za wszelkie niedogosności przepraszamy!<br />
+                    <img style="float: right" width="100" height="70" src="@Url.Content("~/FrontEnd/images/logo2.png")" />
+                </p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

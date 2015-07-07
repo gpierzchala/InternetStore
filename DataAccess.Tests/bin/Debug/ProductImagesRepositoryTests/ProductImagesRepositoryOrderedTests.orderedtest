@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="productimagesrepositoryorderedtests" storage="c:\projekty\sklepinternetowy\dataaccess.tests\productimagesrepositorytests\productimagesrepositoryorderedtests.orderedtest" id="6671b4af-9224-4720-b768-20a6a7fb1d23" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="f9676620-ae91-daed-8b2b-1465414e79c7" name="SaveProductImage" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="38d5700c-64f8-56bd-c0cf-0a587ff41a2e" name="GetProductWithoutImage" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c74379cc-929f-1d84-9176-36b1fc07dc0b" name="GetAllImages" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="a381dc8b-cecf-26a2-840a-b1b97255195f" name="GetProductImage" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="cd8f6a1e-e4fb-6e44-dda4-79a1faa713dc" name="UpdateProductWithImage" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="a9e31d40-9c26-06f0-f05d-5daae5aba73a" name="DeleteProductImage" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

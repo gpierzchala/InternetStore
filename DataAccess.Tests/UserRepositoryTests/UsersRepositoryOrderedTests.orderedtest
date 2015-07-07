@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="UsersRepositoryOrderedTests" storage="c:\projekty\sklepinternetowy\dataaccess.tests\userrepositorytests\usersrepositoryorderedtests.orderedtest" id="a02d0eb0-27aa-4d15-910b-115470469704" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="7af8f7f1-d779-212e-7b71-009b4a55dbd3" name="SaveUser" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="da3ab5cb-9c2d-0a73-6727-27958d65f269" name="GetUserByEmail" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="bf0b0a7a-df52-6d91-5f28-f801315182c6" name="GetUserByGuid" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="e9e25695-cb23-6b77-56e5-e2c43851de16" name="FindUserDuplicateByEmail" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="529833ec-5393-73b3-5e5f-a6bd16ae0ec9" name="DeleteUser" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

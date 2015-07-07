@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="ShoppingCartRepositoryOrderedTests" storage="c:\projekty\sklepinternetowy\dataaccess.tests\shoppingcartrepositorytests\shoppingcartrepositoryorderedtests.orderedtest" id="b7311d47-a455-41d2-a5ce-6089a4071688" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="8db0c29f-0206-1b32-b74d-4095c000e5c4" name="SaveShoppingCart" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="533fba1e-6aec-e04c-65d9-a3b4dd22f97c" name="GetAllShoppingCarts" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="0c0bba09-8526-1553-4bfd-63f7833f6b02" name="GetShoppingCart" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="f9be2b48-63ca-34cb-8837-44b2d8114661" name="UpdateShoppingCart" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d9cd6670-0ed2-832d-fed4-196eb6fb5998" name="DeleteShoppingCart" storage="..\bin\debug\dataaccess.tests.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

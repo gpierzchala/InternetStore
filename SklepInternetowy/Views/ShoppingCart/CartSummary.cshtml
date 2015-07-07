@@ -1,0 +1,109 @@
+﻿@model SklepInternetowy.Models.ShoppingCartViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("SideBar")
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li><a href="@Url.Action("MyCart", "ShoppingCart")">Mój koszyk</a><span class="divider">/</span></li>
+                    <li class="active">Podsumowanie zamówienia</li>
+                </ul>
+                <h2>PODSUMOWANIE ZAMÓWIENIA</h2>
+                <h3>
+                    <a href="@Url.Action("Products","Product")" class="btn btn-large pull-right"> Kontynuuj zakupy</a>
+                    <a href="javascript:history.back()" class="btn btn-large pull-right">Wróć</a>
+                </h3>
+                @if (Model.CartItems.Count > 0)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Produkt</th>
+                                <th>Opis</th>
+                                <th>Ilość</th>
+                                <th>Cena jednostkowa</th>
+                                <th>Cena całkowita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in @Model.CartItems)
+                        {
+                            <tr class="cartItem" id="@item.ID">
+                                <td>
+                                    <img width="100px" height="100px" src="@Url.Action("ViewImage", "Product", new {@productId = item.ID})" alt="" />
+                                </td>
+                                <td>
+                                    @item.Product.Name
+                                    <br />@item.Product.ShortDescription
+                                </td>
+                                <td>
+                                    @item.Quantity
+                                </td>
+                                <td>
+                                    @item.Product.Price.ToString("F") zł
+                                </td>
+                                <td>@((item.Product.Price * item.Quantity).ToString("F")) zł</td>
+                            </tr>
+                        }
+                        <tr class="delivery" id="@Model.DeliveryId">
+                            <td align="center"><b>Sposób i koszt dostawy</b></td>
+                            <td>
+                                <b> @Model.DeliveryType @Model.DeliveryCost.ToString("F") zł </b>
+                            </td>
+
+                            <td colspan="3" style="text-align: right" >
+                                <h4>
+                                    Łączna kwotwa do zapłaty:
+                                    <span class="large label label-important"><h4 id="totalCost">@Model.CartTotal.ToString("F") zł</h4></span>
+                                    <br/>
+                                    <small>
+                                        W tym kosz wysyłki @Model.DeliveryCost.ToString("F") zł
+                                    </small>
+                                </h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="#" id="proceedBtn" class="btn btn-large pull-right btn-success"> Dokonaj zakupu</a>
+                }
+                else
+                {
+                    <div class="span12">
+                        <br /><br />
+                        <h2 style="vertical-align: middle;">Brak przedmiotów w koszyku</h2>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $().ready(function () {
+        $("#proceedBtn").on("click", function (e) {
+            e.preventDefault();
+            var serializedCartdIds = "";
+            var deliveryId = $(".delivery").attr('id');
+            $(".cartItem").each(function() {
+                serializedCartdIds += $(this).attr('id') + ';';
+            });
+
+            $.ajax({
+                url: "@Url.Action("ProceedOrder","ShoppingCart")",
+                type: "POST",
+                data: { delivery: deliveryId},
+                success: function (data, textStatus, jqXHR) {
+                    window.location.href = '@Url.Action("OrderSuccess")';
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    window.location.href = '@Url.Action("OrderFails")';
+                }
+            });
+        });
+        
+    });
+</script>

@@ -1,0 +1,108 @@
+﻿@using DataAccess.Entities
+@model IList<DeliveryTypes>
+
+@{
+    ViewBag.Title = "Zarządzanie sposobami dostawy";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista dostępnych sposobów dostawy
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Nazwa
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Koszt
+                            </th>
+                            <th class="header">
+                                Dostępne opcje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (DeliveryTypes item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.ActionLink(item.Name, "Update", new { id = item.ID }, new { title = "Edytuj", @class = "tip-e" })
+                                </td>
+                                <td>@item.Price.ToString("C")</td>
+                                <td>
+                                    <a href="@Url.Action("Update", "ManageDeliveryTypes", new {id = item.ID})" class="btn btn-large btn-info">Edytuj</a>
+                                    <a type="button"
+                                       class="btn btn-large btn-danger deleteButton"
+                                       href="#deleteModal"
+                                       data-toggle="modal"
+                                       data-id="@item.ID">Usuń</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Usuwanie sposobu dostawy</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>
+                        Czy jesteś pewny, że chcesz usunąć wybrany sposób dostawy
+                        (tej operacji nie można cofnąć)? Zamówieniom, którym został przypisany ten sposób dostawy zostanie przypisany inny.
+                    </b>
+                </p>
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Delete", "ManageDeliveryTypes", FormMethod.Post))
+                {
+                    <input type="hidden" id="deliveryId" name="deliveryId" />
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-danger">Usuń</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $().ready(function() {
+
+        $('.deleteButton').click(function() {
+            var value = $(this).attr("data-id");
+            $(".modal-footer #deliveryId").val(value);
+        });
+    });
+</script>

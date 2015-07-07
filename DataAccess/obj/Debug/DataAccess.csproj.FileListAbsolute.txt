@@ -1,0 +1,51 @@
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.XML
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.pdb
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.dll
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.dll
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\NHibernate.dll
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.xml
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.xml
+C:\Projekty\SklepInternetowy\DataAccess\bin\Debug\NHibernate.xml
+C:\Projekty\SklepInternetowy\DataAccess\obj\Debug\DataAccess.dll
+C:\Projekty\SklepInternetowy\DataAccess\obj\Debug\DataAccess.pdb
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll.config
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.XML
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\DataAccess.pdb
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.dll
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.dll
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\NHibernate.dll
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.xml
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.xml
+E:\Projekty\SklepInternetowy\DataAccess\bin\Debug\NHibernate.xml
+E:\Projekty\SklepInternetowy\DataAccess\obj\Debug\DataAccess.dll
+E:\Projekty\SklepInternetowy\DataAccess\obj\Debug\DataAccess.pdb
+C:\Projekty\SklepInternetowy\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+E:\Projekty\SklepInternetowy\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll.config
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\DataAccess.XML
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\DataAccess.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\NHibernate.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\bin\Debug\NHibernate.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\obj\Debug\DataAccess.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\DataAccess.XML
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\NHibernate.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\FluentNHibernate.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\Iesi.Collections.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\bin\Debug\NHibernate.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\DataAccess\obj\Debug\DataAccess.pdb

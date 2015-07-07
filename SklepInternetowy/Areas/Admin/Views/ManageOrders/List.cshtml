@@ -1,0 +1,125 @@
+﻿@model List<SklepInternetowy.Areas.Admin.Models.OrderModel>
+
+@{
+    ViewBag.Title = "Zarządzanie zamówieniami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-10" style="width: 100%; margin: 0 auto">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista zamówień
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Użytkownik
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Data utworzenia
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Kwota całkowita
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Status zamówienia
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Dostępne opcje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr style="text-align: center">
+                                <td>@item.Username</td>
+                                <td>@item.OrderDate</td>
+                                <td>@item.Total.ToString("c")</td>
+                                <td>@item.OrderState</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "ManageOrders", new {id = item.OrderId})" class="btn btn-large btn-info">Szczegóły</a>
+                                    <a type="button"
+                                       class="btn btn-large btn-success"
+                                       href="#updateOrderState"
+                                       data-toggle="modal"
+                                       data-id="@item.OrderId"
+                                       data-order-id="@item.OrderId">
+                                        Zmień status
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="updateOrderState">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Edycja statusu zamówienia</h3>
+            </div>
+            @using (Html.BeginForm("ChangeOrderState", "ManageOrders", FormMethod.Get))
+            {
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label>Stan zamówienia</label>
+                            </td>
+                            <td>
+                                <input type="hidden" id="OrderId" name="OrderId"/>
+                                @Html.DropDownList("OrderStates")
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-success">Zmień</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $().ready(function() {
+        $('#updateOrderState').on('show.bs.modal', function (e) {
+            var orderId = $(e.relatedTarget).data('order-id');
+            $(e.currentTarget).find('input[name="OrderId"]').val(orderId);
+        });
+    });
+</script>

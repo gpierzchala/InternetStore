@@ -1,0 +1,348 @@
+C:\Projekty\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.csprojResolveAssemblyReference.cache
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll.config
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAccess.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAnnotationsExtensions.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Web.Infrastructure.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\NHibernate.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Owin.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\SimpleCrypto.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\WebActivator.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\WebGrease.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAccess.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAccess.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\NHibernate.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.xml
+C:\Projekty\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll.config
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAccess.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAnnotationsExtensions.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Web.Infrastructure.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\NHibernate.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Owin.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\SimpleCrypto.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\WebActivator.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\WebGrease.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAccess.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\DataAccess.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\NHibernate.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.csprojResolveAssemblyReference.cache
+E:\Projekty\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.pdb
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\DotNet.Highcharts.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.dll
+C:\Projekty\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.xml
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\DotNet.Highcharts.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.dll
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.pdb
+E:\Projekty\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll.config
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\DataAccess.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\DataAnnotationsExtensions.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\DotNet.Highcharts.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\EntityFramework.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Web.Infrastructure.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\NHibernate.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Owin.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\PagedList.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\SimpleCrypto.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\WebActivator.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\WebGrease.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\DataAccess.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\DataAccess.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\NHibernate.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\PagedList.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.pdb
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\EntityFramework.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.xml
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.csprojResolveAssemblyReference.cache
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.dll
+F:\Stacjonarny 17-02-2015\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll.config
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\SklepInternetowy.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\DataAccess.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\DataAnnotationsExtensions.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\DotNet.Highcharts.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\EntityFramework.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\NHibernate.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Owin.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\PagedList.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\SimpleCrypto.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\WebActivator.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\WebGrease.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\BusinessLogic.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\DataAccess.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\DataAccess.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\SklepSportowy.AnalysisModule.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Iesi.Collections.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\MathNet.Numerics.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\NHibernate.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Common.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Ninject.Web.Mvc.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\PagedList.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\PagedList.Mvc.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Helpers.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Mvc.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Razor.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.WebPages.Razor.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\System.Web.Optimization.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Newtonsoft.Json.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Antlr3.Runtime.pdb
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\EntityFramework.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\EntityFramework.SqlServer.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\bin\FluentNHibernate.xml
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.csprojResolveAssemblyReference.cache
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.dll
+C:\Users\Grzegorz\Desktop\SklepInternetowy\SklepInternetowy\obj\Debug\SklepInternetowy.pdb

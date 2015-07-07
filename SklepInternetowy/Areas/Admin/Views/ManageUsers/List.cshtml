@@ -1,0 +1,155 @@
+﻿@model List<SklepInternetowy.Areas.Admin.Models.UserModel>
+
+@{
+    ViewBag.Title = "Zarządzanie użytkownikami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-10" style="width: 100%; margin: 0 auto">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista zamówień
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Imię i nazwisko
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Adres
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Czy admin?
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Kontakt
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Dostępne opcje
+                                <i class="fa fa-sort"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr style="text-align: center">
+                                <td>@item.Name</td>
+                                <td>@item.Address</td>
+                                <td>
+                                    @{
+                            if (item.IsAdmin)
+                            {
+                                <button class="btn btn-large btn-success" style="margin-bottom: 10px;">Tak</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-large btn-danger" style="margin-bottom: 10px;">Nie</button>
+                            }
+                                }
+                            </td>
+                            <td><a href="mailto:@item.Email">@item.Email</a></td>
+                            <td>
+                                <a href="@Url.Action("UserOrders", "ManageOrders", new {email = item.Email})" class="btn btn-large btn-info">Zamówienia użytkownika</a>
+                                <a type="button"
+                                   class="btn btn-large btn-success"
+                                   href="#updateUserRole"
+                                   data-toggle="modal"
+                                   data-id="@item.Email"
+                                   data-email-id="@item.Email"
+                                   data-isadmin-id="@item.IsAdmin">
+                                    Zmień status
+                                </a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="updateUserRole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Edycja statusu zamówienia</h3>
+            </div>
+            @using (Html.BeginForm("ChangeUserRole", "ManageUsers", FormMethod.Get))
+            {
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>Status użytkownika</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" id="email" name="email"/>
+                                    <select class="input" name="isAdmin" id="isAdmin">
+                                        <option value="0">Użytkownik</option>
+                                        <option value="1">Administrator</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-success">Zmień</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $().ready(function() {
+        $('#updateUserRole').on('show.bs.modal', function (e) {
+            var email = $(e.relatedTarget).data('email-id');
+            var isAdmin = $(e.relatedTarget).data('isadmin-id');
+
+            var option = "";
+
+            if (isAdmin === "True")
+                option = "1";
+            else
+                option = "0";
+
+           
+            $(e.currentTarget).find('input[name="email"]').val(email);
+            $(e.currentTarget).find('#isAdmin').val(option);
+        });
+    });
+</script>

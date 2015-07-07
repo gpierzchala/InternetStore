@@ -1,0 +1,69 @@
+﻿@model SklepInternetowy.Models.OrderDetailsModel
+
+@{
+    ViewBag.Title = "Order details";
+    Layout = "~/Views/Shared/_AccountDetails.cshtml";
+}
+
+<style type="text/css">
+    td p {
+        text-align: center;
+    }
+</style>
+
+<div class="col-lg-6" style="margin-left: 15%;">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Identyfikator zamówienia</th>
+                    <th>Data</th>
+                    <th>Kwota</th>
+                    <th>Sposób dostawy</th>
+                    <th>Koszt dostawy</th>
+                    <th>Status zamówienia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td title="Szczegóły"><p>@Model.Order.Id</p></td>
+                    <td><p>@Model.Order.OrderDate</p></td>
+                    <td><p>@Model.Order.SummaryPrice.ToString("F") zł</p></td>
+                    <td><p>@Model.Order.DeliveryType.Name</p></td>
+                    <td><p>@Model.Order.DeliveryType.Price.ToString("F") zł</p></td>
+                    <td><p>@Model.Order.State.StateName</p></td>
+               </tr>
+            </tbody>
+        </table>
+        <div class="span12">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Nazwa produktu</th>
+                        <th>Producent</th>
+                        <th>Cena jednostkowa</th>
+                        <th>Ilość</th>
+                        <th>Koszt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderDetails)
+                    {
+                        <tr>
+                            <td><p>
+                                    <a href="@Url.Action("Details","Product", new {@id = item.Product.ID})">@item.Product.Name</a>
+                                </p></td>
+                            <td><p>@item.Product.Manufacturer.Name</p></td>
+                            <td><p>@item.UnitPrice.ToString("F") zł</p></td>
+                            <td><p>@item.Quantity</p></td>
+                            @{
+                        decimal totalCost = item.Quantity * item.UnitPrice;
+                        <td><p>@totalCost.ToString("F") zł</p></td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

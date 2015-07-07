@@ -1,0 +1,23 @@
+﻿@using DataAccess.Entities
+@model IEnumerable<DataAccess.Entities.Products>
+
+<ul class="thumbnails">
+    @foreach (Products item in Model)
+    {
+        <li class="span3">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details", "Product", new {@id = item.ID})">
+                    <img width="150px" height="150px" src="@Url.Action("ViewImage", "Product", new {@productId = item.ID})" alt="" />
+                </a>
+                <h5>
+                    @item.Name
+                    <br/><br/>
+                    <a class="btn" href="@Url.Action("Details", "Product", new {@id = item.ID})">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                    <a class="btn btn-primary">@item.Price.ToString("F") zł</a>
+                </h5>               
+            </div>
+        </li>
+    }
+</ul>

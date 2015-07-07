@@ -1,0 +1,37 @@
+﻿<div class="container">
+    <div class="row">
+        
+        <div class="span12">
+            <div class="span3 pull-right">
+                @{
+                    <h5>KONTO</h5>
+                    if (Request.IsAuthenticated && Request.Cookies["userid"] != null)
+                    {
+                        <a href="@Url.Action("AccountDetails", "MyAccount")">INFORMACJE PODSTAWOWE</a>
+                        <a href="@Url.Action("Orders", "MyAccount")">HISTORIA ZAMÓWIEN</a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Login", "MyAccount")">ZALOGUJ SIĘ</a>
+                        <a href="@Url.Action("Register", "MyAccount")">ZAREJESTRUJ SIĘ</a>
+                    }
+                }
+            </div>
+            
+            <div class="span3 pull-right">
+                <h5>INFORMACJE O SKLEPIE</h5>
+                <a href="@Url.Action("contact","shop")">KONTAKT</a>
+                <a href="@Url.Action("statute","shop")">REGULAMIN</a>
+                <a href="@Url.Action("faq","shop")">FAQ</a>
+            </div>
+            
+            <div class="span3 pull-right">
+                <h5>OFERTA</h5>
+                <a href="@Url.Action("Recent","Offer")">NOWE PRODUKTY</a>
+                <a href="@Url.Action("Special","Offer")">OFERTA SPECJALNA</a>
+                <a href="@Url.Action("BestSellers","Offer")">BESTSELLER'Y</a>
+            </div>
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,276 @@
+﻿@model List<SklepInternetowy.Areas.Admin.Models.ProductListViewModel>
+
+@{
+    ViewBag.Title = "Zarządzanie produktami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #createModal .table tr { text-align: center; }
+</style>
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-10" style="width: 100%; margin: 0 auto">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista dostępnych produktów
+            </h3>
+            <div style="float: right; margin-top: -25px">
+                <a type="button"
+                   class="btn btn-mini btn-default"
+                   href="#createModal"
+                   data-toggle="modal"
+                   data-id="createModal">
+                    Dodaj
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Nazwa
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Kategoria
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Producent
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Cena jednostkowa
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Dostępne opcje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr style="text-align: center">
+                                <td>
+                                    @item.Name
+                                </td>
+                                <td>@item.Category</td>
+                                <td>@item.Manufacturer</td>
+                                <td>@item.Price.ToString("c")</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "ManageProducts", new {id = item.Id})" class="btn btn-large btn-success">Szczegóły</a>
+                                    <a href="@Url.Action("Update", "ManageProducts", new {id = item.Id})" class="btn btn-large btn-info">Edytuj</a>
+                                    <a href="@Url.Action("ConnectedOrdersWithProducts", "ManageOrders", new {id = item.Id})" class="btn btn-large btn-primary">Powiązane zamówienia</a>
+                                    <a type="button"
+                                       class="changeImageClass btn btn-mini btn-default"
+                                       href="#changeImageModal"
+                                       data-toggle="modal"
+                                       data-product-id="@item.Id">
+                                        Zmień zdjęcie
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="changeImageModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Nowy produkt</h3>
+            </div>
+            @using (Html.BeginForm("ChangeImage", "ManageProducts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>Zdjęcie produktu</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" id="ProductId" name="ProductId"/>
+                                    <input accept=".jpeg, .jpg, .png, .bmp" class="input input-sm" type="file" name="photo" id="photo"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <p>* - pole obowiązkowe</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" value="@ViewBag.ProductId" name="Id" id="Id" />
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-success">Dodaj</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="createModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Nowy produkt</h3>
+            </div>
+            @using (Html.BeginForm("Create", "ManageProducts", FormMethod.Post, new { enctype = "multipart/form-data"}))
+            {
+                <div class="modal-body">
+
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label>*Nazwa</label>
+                            </td>
+                            <td>
+                                <input type="text" name="name" id="name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Kategoria</label>
+                            </td>
+                            <td>@Html.DropDownList("Category")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Producent</label>
+                            </td>
+                            <td>@Html.DropDownList("Manufacturer")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Opis</label>
+                            </td>
+                            <td>
+                                <textarea id="description" name="description"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Krótki opis</label>
+                            </td>
+                            <td>
+                                <input type="text" id="ShortDescription" name="ShortDescription" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>*Cena</label>
+                            </td>
+                            <td>
+                                <input type="text" id="price" name="price"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>*Dostępna ilość</label>
+                            </td>
+                            <td>
+                                <input type="text" id="quantity" name="quantity"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Nowy</label>
+                            </td>
+                            <td>
+                                @Html.CheckBox("IsRecent")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Często kupowany</label>
+                            </td>
+                            <td>
+                                @Html.CheckBox("IsFeatured")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Bestseller</label>
+                            </td>
+                            <td>
+                                @Html.CheckBox("IsBestseller")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Zdjęcie produktu</label>
+                            </td>
+                            <td>
+                                <input accept=".jpeg, .jpg, .png, .bmp" class="input input-sm" type="file" name="photo" id="photo"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <p>* - pole obowiązkowe</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" value="@ViewBag.ProductId" name="Id" id="Id"/>
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-success">Dodaj</button>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $().ready(function(e) {
+        
+        $('#changeImageModal').on('show.bs.modal', function (e) {
+            var productId = $(e.relatedTarget).data('product-id');
+            $(e.currentTarget).find('input[name="ProductId"]').val(productId);
+        });
+
+        $("#createModal").on("submit", function () {
+            if ($("#name").val().length < 2) {
+                alert("Wprowadź nazwę dla nazwy nowego produktu");
+                return false;
+            }
+            else if ($("#price").val().length === 0) {
+                alert("Wprowadź cenę produktu");
+                return false;
+            }
+            else if ($("#quantity").val().length === 0) {
+                alert("Wprowadź ilość dostępnych sztuk produktu");
+                return false;
+            }
+            else if (!$.isNumeric($("#quantity").val()) || !($("#quantity").val() % 1 === 0)) {
+                alert("Wprowadzona ilość nie jest liczbą całkowitą!");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>

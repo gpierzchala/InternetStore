@@ -1,0 +1,143 @@
+﻿<div class="container">
+    <div id="welcomeLine" class="row">
+        <div class="span6" style="padding-bottom: 5px; padding-top: 10px;">
+            @{
+                if (Request.IsAuthenticated)
+                {
+                    <b style="color: white">Witaj! @User.Identity.Name</b>
+                }
+                else
+                {
+                    <b style="color: white">Witaj! Nieznajomy</b>
+                }
+            }
+        </div>
+        @if (Request.IsAuthenticated)
+        {
+            <div class="span6">
+                <div class="pull-right">
+                    <a href="@Url.Action("MyCart", "ShoppingCart")">
+                        <span class="btn btn-mini btn-primary">
+                            @{
+                                <i class="fa fa-shopping-cart"></i>
+                                if (HttpContext.Current.Request.Cookies["count"] != null)
+                                {
+                                    @Request.Cookies["count"].Value
+                                }
+                                else
+                                {
+                                    @: 0
+                                }
+                            }
+                            przedmioty/ów w koszyku
+                        </span>
+                    </a>
+                    <a href="@Url.Action("MyCart", "ShoppingCart")">
+                        @if (HttpContext.Current.Request.Cookies["summary"] != null)
+                        {
+                            <span class="btn btn-mini"> @Request.Cookies["summary"].Value zł</span>
+                        }
+                        else
+                        {
+                            <span class="btn btn-mini"> 0.00zł </span>
+                        }
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div id="logoArea" class="navbar">
+        <div class="navbar-inner" style="height: 80px;">
+            <a class="brand" href="@Url.Action("Index", "Home")"><img src="~/FrontEnd/images/logo2.png" style="height: 59px; width: 100px;" alt="Sklep internetowy"/></a>
+            <div class="span6" style="margin-left: 40px; margin-top: 15px;">
+                @using (Html.BeginForm("Search", "Product", FormMethod.Get, new {style = "height:0;margin-top:0;width:750px;"}))
+                {
+                    <input id="search" class="srchTxt" name="search" placeholder="czego szukasz?" type="text" style="font-size: 15px; height: 30px;"/>
+                    
+
+
+                    if (ViewBag.CategorySelectList != null)
+                    {
+                        <select id="category" name="category" class="srchTxt" style="font-size: 15px; height: 40px; text-align: center;">
+                            <option disabled selected>wybierz kategorię</option>
+                            @foreach (SelectListItem item in ViewBag.CategorySelectList)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                        </select>
+                    }
+                    <button type="submit" id="submitButton" class="btn btn-primary" style="margin-top: -7px;">
+                        <i class="fa fa-search" style="font-size: 30px;"></i>
+                    </button>
+                }
+            </div>
+                
+            <ul id="topMenu" class="nav pull-right">
+                <li>
+                    <a href="@Url.Action("BestSellers", "Offer")"><i class="fa fa-star"></i> Bestsellery</a>
+                </li>
+
+                @if (!Request.IsAuthenticated)
+                {
+                    <li>
+
+                        <a href="#login" role="button" data-toggle="modal" style="padding-right: 10px">Login</a>
+                        <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3>Zaloguj się</h3>
+                            </div>
+                            <div class="modal-body">
+                                @{
+                                    Html.BeginForm("Login", "MyAccount");
+                                    @Html.ValidationSummary(true)
+                                    @Html.AntiForgeryToken()
+                                }
+                                <div class="control-group">
+                                    <input type="text" id="email" name="email" placeholder="Email">
+                                </div>
+                                <div class="control-group">
+                                    <input type="password" id="password" name="password" placeholder="Hasło">
+                                </div>
+                                <div class="control-group">
+                                    <label class="checkbox">
+                                        @Html.CheckBox("rememberMe") Zapamiętaj mnie
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-success">Zaloguj</button>
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Anuluj</button>
+                                @{ Html.EndForm(); }
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Register", "MyAccount")" style="padding-right: 10px">Rejestracja</a>
+                    </li>
+                }
+                @if (Request.IsAuthenticated)
+                {
+                    <li>
+                        <a href="@Url.Action("MyCart", "ShoppingCart")">Koszyk</a>
+                    </li>
+                    if (Request.Cookies["isAdmin"] != null && Request.Cookies["isAdmin"].Value == "1")
+                    {
+                        <li>
+                            <a href="@Url.Action("Index", "Home", new {area = "Admin"})" style="padding-right: 10px;">Admin</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                        <a href="@Url.Action("AccountDetails", "MyAccount")"  style="padding-right: 10px;">Konto</a>
+                    </li>
+                    }
+                    <li>
+                            <a href="@Url.Action("LogOut", "MyAccount")" style="padding-right: 10px;">Wyloguj</a>
+                        </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

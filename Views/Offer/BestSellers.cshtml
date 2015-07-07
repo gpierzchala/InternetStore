@@ -1,0 +1,59 @@
+﻿@using DataAccess.Entities
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Products>
+
+@{
+    ViewBag.Title = "Bestsellery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("SideBar")
+
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("index", "home")">Strona główna</a> <span class="divider">/</span></li>
+                    <li>Bestsellery<span class="divider"></span></li>
+                </ul>
+                
+                    <hr />
+
+                    @using (Ajax.BeginForm("BestSellers", "Offer",
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "productListing"
+                        }))
+                    {
+                        <form class="form-horizontal span9">
+                            <div class="control-group">
+                                <p>
+                                    Sortuj według
+                                    @Html.DropDownList("SortOption", (SelectList) ViewData["SearchOptions"])
+                                    <button type="submit" id="submitButton" class="btn btn-primary">Sortuj</button>
+                                </p>
+                            </div>
+                        </form>
+                    }
+
+                    <div id="productListing">
+                        @Html.Partial("_ProductListing", Model)
+                    </div>
+
+                    <div class="pagination pagination-centered">
+                        <ul>
+                            <li>
+                                @Html.PagedListPager(Model, page => Url.Action("BestSellers", new {page}))
+                            </li>
+                        </ul>
+                    </div>
+                    <br class="clr" />
+            </div>
+
+        </div>
+    </div>    
+</div>

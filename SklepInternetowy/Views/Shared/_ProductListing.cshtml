@@ -1,0 +1,134 @@
+﻿@using DataAccess.Entities
+@model PagedList.IPagedList<Products>
+@{
+    ViewBag.Title = "Produkty";
+}
+
+<div class="tab-content">
+    @if (Model.Count > 0)
+    {
+        <div id="myTab" class="pull-right">
+            <a href="#listView" data-toggle="tab">
+                <span class="btn btn-large btn-primary" id="listBtn">Lista</span>
+            </a>
+            <a href="#blockView" data-toggle="tab">
+                <span class="btn btn-large btn-primary" id="blockBtn">Kafelki</span>
+            </a>
+        </div>
+        <br class="clr" />
+        
+        <div class="tab-pane" id="listView">
+
+            @foreach (Products item in Model)
+            {
+                <div class="row">
+                    <hr class="soft"/>
+                    <div class="span3">
+                        <a href="@Url.Action("Details", "Product", new {@id = item.ID})">
+                            <img width="150px" height="150px" src="@Url.Action("ViewImage", "Product", new {@productId = item.ID})" alt="">
+                        </a>
+                    </div>
+
+                    <div class="span5">
+                        <h3>
+                            @{
+                                if (item.Quantity > 0)
+                                {
+                                    <font color="green"><i class="fa fa-check-square-o"></i> DOSTĘPNY (@item.Quantity szt.)</font>
+                                }
+                                else
+                                {
+                                    <font color="red"><i class="fa fa-ban"></i> NIEDOSTĘPNY</font>
+                                }
+                            }
+                        </h3>
+                        <hr class="soft" />
+                        <h4>@item.Name </h4>
+                        <p>
+                            @item.ShortDescription
+                        </p>
+                        <h3>
+                            <a class="btn" href="@Url.Action("Details", "Product", new {@id = item.ID})">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-large btn-primary">@item.Price.ToString("F") zł</a>
+                        </h3>
+                        <br class="clr" />
+                    </div>
+                </div>
+            }
+            <hr class="soft" />
+        </div>
+
+        
+        <div class="tab-pane  active" id="blockView">
+            <ul class="thumbnails">
+                <hr class="soft" />
+                @foreach (Products item in Model)
+                {
+                    <li class="span3" >
+                        <div class="thumbnail pull-left" style="width: 250px; height: 280px;">
+                            <a href="@Url.Action("Details", "Product", new {@id = item.ID})">
+                                <img width="150px" height="150px" src="@Url.Action("ViewImage", "Product", new {@productId = item.ID})" alt="">
+                            </a>
+                            <div class="caption">
+                                <h5>@item.Name</h5>
+                                <h6 style="text-align: center;">@{
+                                    if (item.Quantity > 0)
+                                    {
+                                        <font color="green"><i class="fa fa-check-square-o"></i> DOSTĘPNY (@item.Quantity szt.)</font>
+                                    }
+                                    else
+                                    {
+                                        <font color="red"><i class="fa fa-ban"></i> NIEDOSTĘPNY</font>
+                                    }
+                                    }
+                                </h6>
+                                <h4 style="text-align: center">
+                                    <a class="btn" href="@Url.Action("Details", "Product", new {@id = item.ID})">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a class="btn btn-primary">@item.Price.ToString("F") zł</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <hr class="soft" />
+        </div>
+    }
+</div>
+
+<br class="clr" />
+
+<a id="return" class="btn btn-large pull-right">Wróć na początek</a>
+
+<script>
+
+    $('#listView').hide();
+    $('#blockBtn').hide();
+    $('#listBtn').click(function() {
+        if ($("#listView").is(":hidden")) {
+            $('#blockView').hide();
+            $('#listBtn').hide();
+            $('#blockBtn').show();
+            $("#listView").fadeIn("slow");
+        }
+    });
+
+    $('#blockBtn').click(function() {
+        if ($("#blockView").is(":hidden")) {
+            $('#listView').hide();
+            $('#blockBtn').hide();
+            $('#listBtn').show();
+            $("#blockView").fadeIn("slow");
+        }
+    });
+
+    $('#return').click(function() {
+        $('html, body')
+            .animate({ scrollTop: '0px' }, 1000);
+    });
+
+</script>

@@ -1,0 +1,152 @@
+﻿@model List<SklepInternetowy.Models.ManufacturerViewModel>
+
+@{
+    ViewBag.Title = "Zarządzanie producentami";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="col-lg-10" style="width: 100%; margin: 0 auto">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-bar-chart-o"></i>
+                Lista dostępnych producentów
+            </h3>
+            <div style="float: right; margin-top: -25px">
+                <a type="button"
+                   class="btn btn-mini btn-default"
+                   href="#createModal"
+                   data-toggle="modal"
+                   data-id="createModal">
+                    Dodaj
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="table-responsive" style="position: relative">
+                <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="header">
+                                Nazwa
+                                <i class="fa fa-sort"></i>
+                            </th>
+                            <th class="header">
+                                Dostępne opcje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr style="text-align: center">
+                                <td>
+                                    @item.Name
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("ConnectedProductsWithManufacturers", "ManageProducts", new {id = @item.Id})"
+                                       class="btn btn-large btn-primary">
+                                        Powiązane gry
+                                    </a>
+                                    <a href="@Url.Action("Update", "ManageManufacturers", new {id = item.Id})" class="btn btn-large btn-info">Edytuj</a>
+                                    <a type="button"
+                                       class="btn btn-large btn-danger deleteButton"
+                                       href="#deleteModal"
+                                       data-toggle="modal"
+                                       data-id="@item.Id">
+                                        Usuń
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="createModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Nowy producent</h3>
+            </div>
+            @using (Html.BeginForm("Create", "ManageManufacturers", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <label style="margin-right: 20px">*Nazwa:</label>
+                    <input type="text" name="manuName" id="manuName"/>
+                    <hr/>
+                    <p>* - pole obowiązkowe</p>
+                </div>
+                <div class="modal-footer">
+
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-success">Dodaj</button>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Usuwanie producenta</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>
+                        Czy jesteś pewny, że chcesz usunąć wybranego producenta
+                        (tej operacji nie można cofnąć). Produktom, którym został przypisany ten producent zostanie przypisany producent Pozostali.
+                    </b>
+                </p>
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Delete", "ManageManufacturers", FormMethod.Post))
+                {
+                    <input type="hidden" id="manufacturerId" name="manufacturerId"/>
+                    <a href="#" class="btn btn-large btn-default" data-dismiss="modal">Zamknij</a>
+                    <button type="submit" class="btn btn-large btn-danger">Usuń</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $().ready(function() {
+
+        $('.deleteButton').click(function() {
+            var value = $(this).attr("data-id");
+            $(".modal-footer #manufacturerId").val(value);
+        });
+
+        $("#createModal").on("submit", function() {
+            if ($("#manuName").val().length < 2) {
+                alert("Wprowadź nazwę dla nazwy nowego producenta");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>

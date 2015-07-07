@@ -1,0 +1,59 @@
+﻿@using DataAccess.Entities
+@using NHibernate.Util
+@using PagedList
+@using PagedList.Mvc
+@model System.Collections.IEnumerable
+
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_AccountDetails.cshtml";
+}
+
+<style type="text/css">
+    td p {
+        text-align: center;
+    }
+</style>
+
+<div class="col-lg-6" style="margin-left: 15%;">
+   @if (Model.Any())
+   {
+       <table class="table table-responsive table-bordered table-striped">
+           <tr>
+               <th>Identyfikator zamówienia</th>
+               <th>Data</th>
+               <th>Kwota</th>
+           </tr>
+           <tbody>
+           @foreach (Orders item in Model)
+           {
+               <tr>
+                   <td title="Szczegóły"><a href="@Url.Action("OrderDetails", "MyAccount", new {id = item.Id})">
+                       <p>@item.Id</p></a></td>
+                   <td>
+                       <p>@item.OrderDate</p></td>
+                   <td>
+                       <p>@item.SummaryPrice.ToString("F") zł</p></td>
+               </tr>
+           }
+           <tr>
+               <td>
+                   @Html.PagedListPager((IPagedList) Model, page =>
+                       Url.Action("Orders", new {page}),
+                       PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing((new AjaxOptions {HttpMethod = "GET"})))
+
+
+               </td>
+
+           </tr>
+           </tbody>
+       </table>
+   }
+   else
+   {
+    <div class="jumbotron">
+        <p>Nie dokonano żadnych zamówień</p>
+    </div>
+   }
+
+</div>

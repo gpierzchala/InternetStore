@@ -1,0 +1,132 @@
+﻿@model SklepInternetowy.Areas.Admin.Models.CreateProductModel
+
+@{
+    ViewBag.Title = "Edycja " + Model.Name;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["error"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["error"]
+            </div>
+        </div>
+    </div>
+}
+@if (TempData["success"] != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                @TempData["success"]
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="pull-right" style="margin-bottom: 10px;">
+            <a class="btn btn-default" href="@Url.Action("List")">Wróć do listy</a>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bar-chart-o"></i>
+                    @ViewBag.Title
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div id="main" style="position: relative">
+
+                    @{ Html.BeginForm(); }
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+
+
+                    <div class="form-group">
+                        <label>*Nazwa</label>
+                        <input type="text" name="name" id="name" value="@Model.Name"/>
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+
+                    <div class="form-group">
+                        <label>Opis</label>
+                        <textarea rows="3" class="form-control" name="description">@Model.Description</textarea>
+                        <p class="help-block">Własny opis dotyczący produktu</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategoria</label>
+                        @Html.DropDownList("Category")
+                    </div>
+                    <div class="form-group">
+                        <label>Producent</label>
+                        @Html.DropDownList("Manufacturer")
+                    </div>
+                    <div class="form-group">
+                        <label>Krótki opis</label>
+                        <input type="text" id="ShortDescription" name="ShortDescription" value="@Model.ShortDescription"/>
+                    </div>
+                    <div class="form-group">
+                        <label>*Cena</label>
+                        <input type="text" id="price" name="price" value="@Model.Price"/>
+                    </div>
+                    <div class="form-group">
+                        <label>*Dostępna ilość</label>
+                        <input type="text" id="quantity" name="quantity" value="@Model.Quantity"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nowy</label>
+                        @Html.CheckBox("IsRecent")
+                    </div>
+                    <div class="form-group">
+                        <label>Często kupowany</label>
+                        @Html.CheckBox("IsFeatured")
+                    </div>
+                    <div class="form-group">
+                        <label>Bestseller</label>
+                        @Html.CheckBox("IsBestseller")
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" id="editProduct" class="btn btn-success" value="Edytuj"/>
+                    </div>
+
+
+                    @{ Html.EndForm(); }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $().ready(function(e) {
+
+        $("#editProduct").on("submit", function () {
+            if ($("#name").val().length < 2) {
+                alert("Wprowadź nazwę dla nazwy nowego produktu");
+                return false;
+            }
+            else if ($("#price").val().length === 0) {
+                alert("Wprowadź cenę produktu");
+                return false;
+            }
+            else if ($("#quantity").val().length === 0) {
+                alert("Wprowadź ilość dostępnych sztuk produktu");
+                return false;
+            }
+            else if (!$.isNumeric($("#quantity").val()) || !($("#quantity").val() % 1 === 0)) {
+                alert("Wprowadzona ilość nie jest liczbą całkowitą!");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
